@@ -1,0 +1,9 @@
+.contactsElement a {
+    color: black;
+    text-decoration: none;
+    
+}
+
+.contactsElement a:hover {
+   color: white;
+}

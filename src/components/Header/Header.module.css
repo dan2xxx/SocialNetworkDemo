@@ -1,0 +1,81 @@
+.header {
+    grid-area: h;
+    background-color: black;
+}
+
+.header img {
+    width: 60px;
+}
+
+.header img.logo {
+    width: 100px;
+}
+
+
+
+.loginForm {
+    color:white;
+    float:right;
+    font-size: 30px;
+    padding-top: 15px;
+}
+
+.searchForm {
+    
+    height: 8em;
+    position: relative 
+
+}
+
+.searchForm input {
+    font-size: 20px;
+    margin: 0;
+    border-radius: 10px;
+    position: absolute;               
+    top: 30%;                        
+    transform: translate(0, -50%);
+    opacity: 0.8;
+    
+    
+}
+
+.searchForm input:hover {
+    
+    opacity: 0.9;
+  
+}
+
+.searchForm  {
+    
+    opacity: 0.9;
+  
+}
+
+
+
+.headerWrapper {
+    margin: o auto;
+    display: grid;
+    width: 100%;
+    height: 80px;
+    
+    grid-template-areas: 
+    "logo s l";
+
+    grid-template-columns: 9% 20% 70%;
+    }
+
+.logoWrapper {
+    grid-area: logo;
+   
+}
+
+
+.searchWrapper {
+    grid-area: s;
+}
+
+.loginWrapper {
+    grid-area: l;
+   
+}

@@ -1,0 +1,57 @@
+.inbox {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 
+    "D M"
+
+    ;
+}
+
+.dialogs {
+    grid-area: D;
+    margin: 10px;
+    margin-top: 20px;
+
+}
+
+.messages {
+    grid-area: M;
+    margin-top: 20px;
+}
+
+.dialog a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    
+    
+}
+
+.dialog a.active {
+    color: gold;
+    padding: 10px;
+    
+}
+
+.message {
+    line-height: 20px;
+    padding: 5px;
+    
+}
+
+.smallAvatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    
+}
+
+.microAvatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.error {
+    color: rgba(150, 0, 0, 0.5);
+}

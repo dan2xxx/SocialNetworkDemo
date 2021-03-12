@@ -1,0 +1,30 @@
+.posts {
+    padding: 10px;
+}
+
+.post_input {
+    height: 50px;
+    width: 300px;
+}
+
+.button {
+    
+    align-self: center;
+    background:  transparent;
+    height:  40px;
+    line-height:  40px;
+    border:  2px solid white;
+    display:  inline-block;
+    float:  none;
+    text-align:  center;
+    
+    width:  100px;
+    padding:  0px!important;
+    font-size:  20px;
+    color:  #fff;
+}
+
+.button:hover  {
+    color:  #fff;
+    background:  rgba(255, 255, 255, 0.2);
+}
