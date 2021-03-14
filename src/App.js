@@ -10,7 +10,7 @@ import { compose } from 'redux';
 import LoaderProcess from './components/LoaderProcess/LoaderProcess';
 import withSuspense from './../src/hoc/withSuspense'
 import SettingsContainer from './components/Settings/Settings';
-import SearchContainer from './components/Header/Search/Search';
+
 
 
 

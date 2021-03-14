@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
     )
 }
 
-const SearchUserContainer = compose(
+export default compose(
     connect(mapStateToProps, {
         getUsers: searchUserThunkCreator,
         startFollow: followAccess,
@@ -26,10 +26,3 @@ const SearchUserContainer = compose(
     })
 )(Container)
 
-
-
-
-
-
-
-export default SearchUserContainer

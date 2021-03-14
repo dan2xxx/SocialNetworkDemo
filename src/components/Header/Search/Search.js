@@ -17,6 +17,7 @@ const Search = (props) => {
         if (redirect === true) {
             
             setRedirect(false)
+            
         }
 
     }, [redirect])
@@ -35,7 +36,7 @@ const Search = (props) => {
 
     return (
         <div  >
-        {redirect ? <Redirect to={'/search/'} /> : null }
+        {redirect ? <Redirect to={'/search'} /> : null }
 
         <form className={classes.searchForm} onSubmit={handleSubmit(onSubmit)}>
         <input placeholder='search' ref={register({ required: true })} name='searchData'></input>

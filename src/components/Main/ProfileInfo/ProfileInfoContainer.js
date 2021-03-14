@@ -10,16 +10,26 @@ import { compose } from 'redux';
 
 class ProfileInfoAPIContainer extends React.Component {
 
+    
+    
+    
+    
     componentDidMount () {
         if (this.props.match.params.userId) {
 
-            console.log('did mount') 
             this.setUser()
-            
-            
+           
         }
     }    
-    
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname ) {
+            this.setUser ()
+        }
+        
+    }
+
+      
        
     
     

@@ -6,7 +6,6 @@ import LoaderProcess from './../../components/LoaderProcess/LoaderProcess'
 export default class Container extends React.Component {
     constructor(props) {
         super(props)
-
         this.moreUsers = this.moreUsers.bind(this)
     }
     
@@ -20,7 +19,12 @@ export default class Container extends React.Component {
         this.props.getUsers(currentPage, this.props.userData.userList)
     }
 
-
+    componentDidUpdate(prevProps) {
+       if (this.props.searchTag !== prevProps.searchTag) {
+        this.props.cleanUserList()
+        this.moreUsers(1)
+        }
+      }
 
 
     render() {
