@@ -1,24 +1,21 @@
-import React from 'react';
-import classes from './Post.module.css';
+import React from 'react'
+import classes from './Post.module.css'
 
 const Post = (props) => {
+  const userData = props.userData
+  // debugger
 
-    const userData = props.userData
-    //debugger
-
-    return (
+  return (
 
         <div className={classes.item}>
-            
-            
+
             <img src={userData.avatarUrl} />
             {props.name}
             <div>{props.text}</div>
-    
+
         </div>
 
-
-    )
+  )
 }
 
-export default Post;
+export default Post

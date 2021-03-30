@@ -1,19 +1,14 @@
-import React from 'react';
-import MyPostsContainer from './MyPosts/MyPostsContainer';
-import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer';
-
-
+import React from 'react'
+import MyPostsContainer from './MyPosts/MyPostsContainer'
+import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer'
 
 const Main = (props) => {
-
-    
-  
-    return (
+  return (
       <div>
-      <ProfileInfoContainer  /> 
+      <ProfileInfoContainer />
       <MyPostsContainer />
       </div>
-    );
-  }
+  )
+}
 
-  export default Main;
+export default Main

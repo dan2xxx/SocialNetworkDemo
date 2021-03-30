@@ -1,28 +1,20 @@
-import React, { useRef } from 'react';
-import classes from './MyPosts.module.css';
-import Post from './Post/Post';
+import React from 'react'
+import classes from './MyPosts.module.css'
+import Post from './Post/Post'
 import { Form, Field } from 'react-final-form'
 import { maxLength } from './../../../utils/validators'
 
-
 const MyPosts = (props) => {
+  const postsData = props.profilePage.postsData
+  const userData = props.userData.demoUserList
 
+  const onSubmit = (data) => {
+    // console.log(data)
+    props.addPost(data.Post)
+  }
 
-
-
-    const postsData = props.profilePage.postsData
-    const userData = props.userData.demoUserList
-
-    const onSubmit = (data) => {
-        //console.log(data)
-        props.addPost(data.Post)
-    }
-
-
-    return (
+  return (
         <div className={classes.posts}>
-
-
 
             <div>
                 <Form
@@ -31,12 +23,11 @@ const MyPosts = (props) => {
                     render={
                         ({ handleSubmit, form }) => (
                             <form onSubmit={(event) => {
-                                const promise = handleSubmit(event);
-                                console.log(handleSubmit(event))
-                                form.reset();
+                              const promise = handleSubmit(event)
+                              console.log(handleSubmit(event))
+                              form.reset()
 
-                                return promise;
-
+                              return promise
                             }}>
                                 <h3>Thread</h3>
 
@@ -64,14 +55,12 @@ const MyPosts = (props) => {
 
                 />
 
-
             </div>
 
             {postsData.map((post, index) => <Post key={'Post: ' + index} name={post.name} text={post.text} userData={userData[post.id]} />)}
 
-
         </div>
-    )
+  )
 }
 
-export default MyPosts;
+export default MyPosts

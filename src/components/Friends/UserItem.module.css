@@ -14,7 +14,7 @@ a {
     "follow bio";
 
 
-    grid-template-columns: 10% 70%;
+    grid-template-columns: 100px 70%;
     grid-template-rows: 70% 30%;
     
     

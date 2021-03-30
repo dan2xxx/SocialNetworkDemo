@@ -2,10 +2,8 @@ import React from 'react'
 import UserItem from './UserItem'
 import classes from './User.module.css'
 
-
 const Users = (props) => {
-    
-      return (
+  return (
 
           <div>
               {props.userData.userList.map((user) => <UserItem
@@ -13,35 +11,27 @@ const Users = (props) => {
                   chgFollowStatus={props.chgFollowStatus}
                   user={user}
                   followInProgress={props.followInProgress}
-                  setFollowProgress={props.setFollowProgress} 
+                  setFollowProgress={props.setFollowProgress}
                   startFollow={props.startFollow}
-                  stopFollow={props.stopFollow}    
+                  stopFollow={props.stopFollow}
                   />)}
-              
-              
+
               <div className={classes.center}>
-                  {!props.isFetching ?
-                      <button
+                  {!props.isFetching
+                    ? <button
                           onClick={() => {
-                              //console.log('Page: ', props.userData.page+1)
-                              props.moreUsers(props.userData.page + 1)
-
-
+                            // console.log('Page: ', props.userData.page+1)
+                            props.moreUsers(props.userData.page + 1)
                           }}
                           className={classes.moreButton}>
                           more...
                 </button>
-                      :
-                      null
+                    : null
                   }
 
               </div>
           </div>
-        )
-
-    }
-
-
-
+  )
+}
 
 export default Users

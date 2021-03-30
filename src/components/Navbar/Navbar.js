@@ -1,28 +1,24 @@
-import React from 'react';
-import classes from './Navbar.module.css';
-import {NavLink} from 'react-router-dom';
-import FriendsBarContainer from './FriendsBar/FriendsBarContainer';
-import { connect } from 'react-redux';
-import {setUserProfileThunkCreator} from './../../redux/profile-reducer'
-import {logoutThunkCreator} from './../../redux/login-reducer'
+import React from 'react'
+import classes from './Navbar.module.css'
+import { NavLink } from 'react-router-dom'
+import FriendsBarContainer from './FriendsBar/FriendsBarContainer'
+import { connect } from 'react-redux'
+import { setUserProfileThunkCreator } from './../../redux/profile-reducer'
+import { logoutThunkCreator } from './../../redux/login-reducer'
 
 const NavBar = (props) => {
+  // console.log(props)
+  const myProfileUrl = '/profile/' + props.myId
 
-    //console.log(props)
-    const myProfileUrl = '/profile/' + props.myId
+  const MyProfileOnClick = (props) => {
+    props.setUserProfile(props.myId)
+  }
 
-    const MyProfileOnClick = (props) => {
-      
-      props.setUserProfile(props.myId)
-    }
+  const logout = () => {
+    props.logout()
+  }
 
-    const logout = () => {
-      props.logout()
-    }
-
-
-
-    return (
+  return (
       <div className={classes.nav}>
 
       <div className={classes.item} onClick={() => MyProfileOnClick(props)}><NavLink activeClassName={classes.active} to={myProfileUrl}>Profile</NavLink></div>
@@ -34,19 +30,16 @@ const NavBar = (props) => {
       <div className={classes.item} ><NavLink to='/login' onClick={() => logout()}>Sign Out</NavLink></div>
 
       </div>
-      
-    );
+
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    myId: state.loginForm.id
   }
+}
 
+const NavBarContainer = connect(mapStateToProps, { setUserProfile: setUserProfileThunkCreator, logout: logoutThunkCreator })(NavBar)
 
-  const mapStateToProps = (state) => {
-    return {
-      myId: state.loginForm.id
-    }
-    
-  }
-
-  const NavBarContainer = connect(mapStateToProps,{setUserProfile: setUserProfileThunkCreator, logout: logoutThunkCreator})(NavBar)
-
-
-export default NavBarContainer;
+export default NavBarContainer

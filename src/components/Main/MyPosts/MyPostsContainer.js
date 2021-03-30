@@ -1,13 +1,9 @@
-import React, { useRef } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import { addPostActionCreator } from './../../../redux/profile-reducer'
 
-import MyPosts from './MyPosts';
-
+import MyPosts from './MyPosts'
 
 // const MyPostsContainer = (props) => {
-
-
 
 //     const addPost = () => {
 //         props.dispatch(addPostActionCreator())
@@ -16,7 +12,6 @@ import MyPosts from './MyPosts';
 //     const postChange = (e) => {
 //         props.dispatch(updatePostInputActionCreator(e.target.value))
 //     }
-
 
 //     return (
 //         <div >
@@ -31,17 +26,12 @@ import MyPosts from './MyPosts';
 // }
 
 const mapStateToProps = (state) => {
-    return { 
-        userData: state.userData,
-        profilePage: state.profilePage
-    }
+  return {
+    userData: state.userData,
+    profilePage: state.profilePage
+  }
 }
 
+const MyPostsContainer = connect(mapStateToProps, { addPost: addPostActionCreator })(MyPosts)
 
-
-
-const MyPostsContainer = connect(mapStateToProps, {addPost: addPostActionCreator})(MyPosts)
-
-
-
-export default MyPostsContainer;
+export default MyPostsContainer

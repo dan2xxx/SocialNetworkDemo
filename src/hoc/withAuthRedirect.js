@@ -3,35 +3,26 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 const mapStateToPropsRedirect = (state) => {
-    return ({
-        myId: state.loginForm.id
-    })
+  return ({
+    myId: state.loginForm.id
+  })
 }
-
-
-
 
 const withAuthRedirect = (Component) => {
-
-    //debugger
-    const RedirectComponent = (props) => {
-
-        if (props.myId == null) {
-            return <Redirect to={'/login'} />
-        } 
-       
-        return (
-            <Component {...props} />
-            
-        )
+  // debugger
+  const RedirectComponent = (props) => {
+    if (props.myId == null) {
+      return <Redirect to={'/login'} />
     }
 
-    
-    let ConnectedWithAutRedirect = connect(mapStateToPropsRedirect,{})(RedirectComponent)
-    return ConnectedWithAutRedirect
-    
+    return (
+            <Component {...props} />
+
+    )
+  }
+
+  const ConnectedWithAutRedirect = connect(mapStateToPropsRedirect, {})(RedirectComponent)
+  return ConnectedWithAutRedirect
 }
 
-
 export default withAuthRedirect
-
